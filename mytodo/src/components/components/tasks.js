@@ -11,7 +11,6 @@ import {
 } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 import img from "../images/empty.svg";
-
 function TaskList({ tasks, updateTask, deleteTask, deleteTaskAll, checkTask }) {
   if (!tasks.length) {
     return (
@@ -41,23 +40,43 @@ function TaskList({ tasks, updateTask, deleteTask, deleteTaskAll, checkTask }) {
         alignItems='stretch'
       >
         {tasks.map((task) => (
+
           <HStack key={task.id} opacity={task.check === true ? "0.2" : "1"}>
-            <Text
-              w='100%'
-              p='8px'
-              borderRadius='lg'
-              as={task.check === true ? "s" : ""}
-              cursor='pointer'
-              textAlign='left'
-              onClick={() => checkTask(task.id)}
-            >
-              {task.body}
-            </Text>
+            <VStack w='100%'>
+              
+              <Text
+
+                w='100%'
+                p='8px'
+                borderRadius='lg'
+                  as={task.check === true ? "s" : ""}
+                  cursor='pointer'
+                  textAlign='left'
+                  onClick={() => checkTask(task.id)}
+                >
+                  {task.body}
+                </Text>
+
+                <Text
+                  w='100%'
+                  p='8px'
+                  borderRadius='lg'
+                  as={task.check === true ? "s" : ""}
+                  cursor='pointer'
+                  textAlign='left'
+                  onClick={() => checkTask(task.id)}
+                >
+                  {task.creDate}
+                </Text>
+            </VStack>
             <DeleteTask
               task={task}
               deleteTask={deleteTask}
               deleteTaskAll={deleteTaskAll}
             />
+
+
+
             <UpdateTask task={task} updateTask={updateTask} />
           </HStack>
         ))}

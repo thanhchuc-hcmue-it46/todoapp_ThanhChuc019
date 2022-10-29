@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, HStack, Input, useToast } from "@chakra-ui/react";
 import { nanoid } from "nanoid";
+import Moment from 'moment';
 
 function AddTask({ addTask }) {
   const toast = useToast();
@@ -28,8 +29,9 @@ function AddTask({ addTask }) {
     const task = {
       id: nanoid(),
       body: taskText,
+      creDate: Moment().format('HH:mm:ss DD-MM-YYYY'),
       check: false,
-    };
+    }; 
 
     addTask(task);
     setContent("");
