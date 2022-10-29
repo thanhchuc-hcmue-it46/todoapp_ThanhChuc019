@@ -1,0 +1,17 @@
+h1{
+    background: -webkit-linear-gradient(#7F7FD5, #eeabf4, #91EAE4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+ h2{
+    background: -webkit-linear-gradient(#005AA7, #f1e867, #DA4453);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+ }
+
+ h3{
+    background: -webkit-linear-gradient(#7faad5, #e299e8, #8ff1e1);
+  -webkit-background-clip: text;
+  /* -webkit-text-fill-color: transparent; */
+}
+

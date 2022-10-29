@@ -10,6 +10,7 @@ import { DangKy } from './components/DangKy';
 import { MyContextProvider } from './contexts/MyContext';
 import { TodoContextProvider } from './contexts/TodoContext';
 
+
 function App() {
   return (
     <div className="App">
@@ -21,16 +22,17 @@ function App() {
             <Link to='/todos' className='mylink'>TODOs</Link>
             <Link to='/login' className='mylink'>Login</Link>
             <Link to='/register' className='mylink'>Register</Link>
+          
           </nav>
-
+ 
           <TodoContextProvider>
             <Routes>
               <Route exact path='/' element={<HomePage />} />
-              <Route  path='/about' element={<About />} />
-              <Route  path='/home' element={<HomePage />} />
-              <Route  path='/todos' element={<Todo />} />
-              <Route  path='/login' element={<Login />} />
-              <Route  path='/register' element={<DangKy />} />
+              <Route exact path='/about' element={<About />} />
+              <Route exact path='/home' element={<HomePage />} />
+              <Route exact path='/todos' element={<Todo />} />
+              <Route exact path='/login' element={<Login />} />
+              <Route etxact path='/register' element={<DangKy />} />
               {/* <Route exact path='/demo' element={<DemoApi />} /> */}
             </Routes>
           </TodoContextProvider>
@@ -38,7 +40,6 @@ function App() {
       </MyContextProvider>
     </div>
   );
-
 }
 
 export default App;
